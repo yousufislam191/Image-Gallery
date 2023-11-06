@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { DndProvider } from "react-dnd";
+import { TouchBackend } from "react-dnd-touch-backend";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { isMobile } from "react-device-detect";
 import DraggableImage from "../components/DraggableImage";
 import { InitialImages } from "../images";
 
@@ -62,7 +64,7 @@ const ImageGallery = () => {
       </div>
 
       {/* Rendering the draggable images */}
-      <DndProvider backend={HTML5Backend}>
+      <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {images.map((image, index) => (
             <div
