@@ -45,7 +45,7 @@ const ImageGallery = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto py-4 px-10">
       <div className="flex justify-between items-center py-3 px-3 sm:px-8 border-2 border-gray-950 rounded-lg mb-2">
         {isChecked ? (
           <>
@@ -65,7 +65,7 @@ const ImageGallery = () => {
 
       {/* Rendering the draggable images */}
       <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {images.map((image, index) => (
             <div
               key={index}
